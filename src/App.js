@@ -1,23 +1,38 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from "react";
+import Popup from "./components/Popup"
+
 import './App.css';
 
 function App() {
+
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  function toggle(){
+    setIsOpen((isOpen) => !isOpen);
+  }
+
+  const popMenu = (e) => {
+    e.preventDefault();
+    console.log('hello!');
+    toggle();
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+
+    <nav class="bg-white border-gray-200 dark:bg-black">
+      <div class="max-w-2xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="logo.svg" class="h-4" alt="Objective" />
         </a>
-      </header>
+
+        <div onClick={popMenu} id="dropdownInformationButton" class="menu-toggle"></div>
+      </div>
+    </nav>
+
+    {isOpen && <Popup/>}
+
     </div>
   );
 }
