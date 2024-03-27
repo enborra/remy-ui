@@ -1,0 +1,11 @@
+
+
+.results-panel {
+	display: flex;
+	align-self: center;
+
+	width: 70%;
+	height: 300px;
+
+	border: solid 1px red;
+}

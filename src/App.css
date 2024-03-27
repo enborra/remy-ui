@@ -34,9 +34,9 @@ body {
   width: 62px;
   height: 20px;
   background-image: url('logo.svg');
+  align-items: center;
   display: block;
   margin-top: 20px;
-  margin-left: 0px;
   float: left;
 }
 
@@ -44,10 +44,15 @@ body {
   width: 29px;
   height: 14px;
   background-image: url('menu-toggle.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px;
   display: block;
   margin-top: 20px;
   margin-right: 0px;
   float: right;
+  cursor: pointer;
+  z-index: 100;
 }
 
 .App .nav .breaker {

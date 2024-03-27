@@ -13,7 +13,6 @@ function App() {
 
   const popMenu = (e) => {
     e.preventDefault();
-    console.log('hello!');
     toggle();
   }
 
@@ -22,9 +21,9 @@ function App() {
     <div className="App">
 
     <nav class="bg-white border-gray-200 dark:bg-black">
-      <div class="max-w-2xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div class="max-w-4xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="logo.svg" class="h-4" alt="Objective" />
+            <div class="logo" alt="Objective" />
         </a>
 
         <div onClick={popMenu} id="dropdownInformationButton" class="menu-toggle"></div>
