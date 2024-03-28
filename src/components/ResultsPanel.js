@@ -41,8 +41,6 @@ export function ResultsPanel(props){
         }
 
         setCount(resp);
-
-        console.log('response from poll:');
       });
   }
 

@@ -49,8 +49,7 @@ class Popup extends React.Component {
 	render(){
 		return (
 			<div className="popup">
-				<div class="spacer"></div>
-				<input type="text" className="search-box" onChange={evt => this.doSearch(evt)}></input>
+				<input type="text" placeholder="what do you want to find?" className="search-box" onChange={evt => this.doSearch(evt)}></input>
 
 				{this.isOpen && <ResultsPanel sid={this.search_id}/>}
 			</div>

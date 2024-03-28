@@ -1,11 +1,18 @@
 
 
 .results-panel {
-	display: flex;
+	position: absolute;
+	left: -250px;
+	top: 100px;
+
 	align-self: center;
 
-	width: 70%;
-	height: 300px;
+	width: 570px;
+	height: 200px;
 
-	border: solid 1px red;
+	background-color: #fff;
+	border-radius: 10px;
+	color: #000;
+
+	padding: 40px;
 }

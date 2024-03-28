@@ -1,66 +1,44 @@
 body {
   background-color: #000;
+  background-image: url('search_bg.png');
+  background-repeat: no-repeat;
+  background-size: 1600px;
+  background-position: center top;
 }
 
 .App {
-  text-align: center;
   color: #fff;
+/*  border: solid 1px blue;*/
+  min-height: 2000px;
+}
+.App nav {
+/*  display: flex;*/
+/*  float: right;*/
+  max-width: 1000px;
+  align-self: center;
+
+  margin: 0 auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 8vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App .nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-/*  border: solid 1px red;*/
-}
-
-.App .nav .controls {
+.App nav .controls {
   width:100%;
 }
 
-.App .logo {
+.App nav .logo {
   width: 62px;
   height: 20px;
   background-image: url('logo.svg');
   align-items: center;
   display: block;
-  margin-top: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   float: left;
 }
 
-.App .menu-toggle {
-  width: 29px;
-  height: 14px;
-  background-image: url('menu-toggle.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  padding: 20px;
-  display: block;
-  margin-top: 20px;
-  margin-right: 0px;
-  float: right;
-  cursor: pointer;
-  z-index: 100;
-}
-
-.App .nav .breaker {
-  width: 100%;
+.App nav .breaker {
   height: 2px;
   background-color: #fff;
-  display: flex;
-  margin-top: 30px;
+  display: block;
 }
 
 .App-link {

@@ -20,17 +20,16 @@ function App() {
   return (
     <div className="App">
 
-    <nav class="">
-      <div class="max-w-4xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <div class="logo" alt="Objective" />
-        </a>
+        <nav class="">
+          <div class="flex flex-wrap items-center justify-between">
+            <a class="flex items-center space-x-3 rtl:space-x-reverse">
+                <div class="logo" alt="Objective" />
+            </a>
+            <Popup/>
+          </div>
 
-        <div onClick={popMenu} id="dropdownInformationButton" class="menu-toggle"></div>
-      </div>
-    </nav>
-
-    {isOpen && <Popup/>}
+          <div class="breaker"></div>
+        </nav>
 
     </div>
   );
