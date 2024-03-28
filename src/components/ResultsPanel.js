@@ -30,14 +30,23 @@ export function ResultsPanel(props){
       .then(data => {
         var resp = '';
 
-        if( data.state != 'completed' ){
-          resp = resp + data.state;  
-        }
+        if( data.state == 'waiting_for_human' ){
+          
+          resp = 'Waiting for human response.';
+        
+        } else if( data.state == 'completed'){
 
-        if( data.results ){
-          if( data.results.length > 0 ){
-            resp = resp + ' ' + data.results[0].answer;
+          if( data.results ){
+            if( Array.isArray(data.results) ){
+              if( data.results.length > 0 ){
+                resp = data.results[0].answer;
+              }
+            } else {
+              resp = data.results;
+            }
+            
           }
+
         }
 
         setCount(resp);
