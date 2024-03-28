@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 
 import './ResultsPanel.css';
 
+// import HumanResponse from "./HumanResponse"
+
 
 export function ResultsPanel(props){
 
@@ -94,9 +96,12 @@ export function ResultsPanel(props){
   //   )
   // }
 
+
+
   return (
       <div className="results-panel">
 
+        
         {count}
 
       </div>
