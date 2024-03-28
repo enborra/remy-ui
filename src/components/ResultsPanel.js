@@ -5,7 +5,7 @@ import './ResultsPanel.css';
 
 export function ResultsPanel(props){
 
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState();
   const content = 'THISISTHESID';
 
   useEffect(() => {
@@ -31,7 +31,6 @@ export function ResultsPanel(props){
         var resp = '';
 
         if( data.state == 'waiting_for_human' ){
-          
           resp = 'Waiting for human response.';
         
         } else if( data.state == 'completed'){

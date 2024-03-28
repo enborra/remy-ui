@@ -2,12 +2,12 @@
 
 .results-panel {
 	position: absolute;
-	left: -250px;
-	top: 100px;
+	left: 10px;
+	top: 90px;
 
 	align-self: center;
 
-	width: 570px;
+	width: 580px;
 	height: 200px;
 
 	background-color: #fff;
