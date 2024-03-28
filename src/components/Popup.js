@@ -6,8 +6,6 @@ import './Popup.css';
 
 class Popup extends React.Component {
 
-	
-
 	constructor(props){
 		super(props);
 
@@ -17,8 +15,6 @@ class Popup extends React.Component {
 	}
 
 	doThing(q){
-		console.log('asdf');
-		console.log(q);
 		this.isOpen = true;
 
 		var u = 'https://hackathon-2024-cmd-k-dc02368c323c.herokuapp.com/search';
@@ -34,12 +30,11 @@ class Popup extends React.Component {
 				this.setState({ resultContent: data.search_id })
 				this.search_id = data.search_id;
 
-				console.log(this.search_id);
+				this.isOpen = true;
 			})
 			.catch((error) => {
 				console.log(error);
-			})
-
+			});
 	}
 
 	doSearch(evt){
@@ -48,7 +43,7 @@ class Popup extends React.Component {
 		if( this.timeout ) clearTimeout(this.timeout);
 		this.timeout = setTimeout(() => {
 			this.doThing(evt.target.value);
-		}, 300);
+		}, 1000);
 	}
 
 	render(){
@@ -57,7 +52,7 @@ class Popup extends React.Component {
 				<div class="spacer"></div>
 				<input type="text" className="search-box" onChange={evt => this.doSearch(evt)}></input>
 
-				{this.isOpen && <ResultsPanel content={this.search_id}/>}
+				{this.isOpen && <ResultsPanel sid={this.search_id}/>}
 			</div>
 		)
 	}
