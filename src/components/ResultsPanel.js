@@ -2,13 +2,19 @@ import React, { useEffect, useState } from "react";
 
 import './ResultsPanel.css';
 
-// import HumanResponse from "./HumanResponse"
+import HumanResponse from "./HumanResponse"
+import LookupResponse from "./LookupResponse"
 
 
 export function ResultsPanel(props){
 
   const [count, setCount] = useState();
   const content = 'THISISTHESID';
+  
+  var [humanResponse, setHumanResponse] = useState();
+  var [lookupResponse, setLookupResponse] = useState();
+  var responseType = '';
+  var isHumanResponse = false;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -34,75 +40,38 @@ export function ResultsPanel(props){
 
         if( data.state == 'waiting_for_human' ){
           resp = 'Waiting for human response.';
+          isHumanResponse = true;
+          setLookupResponse('');
         
         } else if( data.state == 'completed'){
 
           if( data.results ){
             if( Array.isArray(data.results) ){
               if( data.results.length > 0 ){
-                resp = data.results[0].answer;
+                // resp = data.results[0].answer;
+                isHumanResponse = false;
+                setLookupResponse(data.results[0].answer);
+                setHumanResponse('');
               }
             } else {
+              isHumanResponse = true;
+              setHumanResponse(data.results);
               resp = data.results;
-            }
-            
+            } 
           }
-
         }
 
         setCount(resp);
       });
   }
 
-  // constructor(props){
-  //   super(props);
-
-  //   console.log('results panel:');
-  //   this.sid = this.props.content;
-
-  //   // this.startPolling();  
-  // }
-
-  // startPolling(sid){
-  //   this.sid = sid;
-  //   const timer = setInterval(this.pollForResults, 2000);
-
-  // }
-
-  // pollForResults(){
-  //   console.log( 'polling server for results..');
-
-  //   var u = 'https://hackathon-2024-cmd-k-dc02368c323c.herokuapp.com/search/'+this.sid;
-
-  //   fetch(u,{
-  //     method: 'GET',
-  //     headers: {'Content-Type': 'application/json' },
-  //     mode: 'cors'
-  //   })
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       console.log('response from poll:');
-  //       console.log(data);
-  //     });
-  // }
-
-  // render(){
-  //   return (
-  //     <div className="results-panel">
-
-  //       {this.sid}
-
-  //     </div>
-  //   )
-  // }
-
-
-
   return (
       <div className="results-panel">
 
         
         {count}
+
+        {isHumanResponse ? <HumanResponse content={humanResponse} /> : <LookupResponse content={lookupResponse}/>}
 
       </div>
     )

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 
-import './HumanResponse.css';
+import './LookupResponse.css';
 
 
-class HumanResponse extends React.Component {
+class LookupResponse extends React.Component {
 
 	constructor(props){
 		super(props);
@@ -12,7 +12,7 @@ class HumanResponse extends React.Component {
 
 	render(){
 		return (
-			<div className="HumanResponse">
+			<div className="LookupResponse">
 				{this.props.content}
 			</div>
 		)
@@ -20,4 +20,4 @@ class HumanResponse extends React.Component {
 
 }
 
-export default HumanResponse
+export default LookupResponse
